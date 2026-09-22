@@ -6,6 +6,10 @@
 
 SuperLight records local Codex token usage and estimates its API-equivalent cost. A small macOS menu bar label shows today's spend; click it for a dashboard with today, this week, this month, and model prices.
 
+[![SuperLight menu bar demo](docs/media/superlight-demo.gif)](docs/media/superlight-demo.mp4)
+
+[Watch the 7-second demo (MP4)](docs/media/superlight-demo.mp4)
+
 - **A quiet desktop app.** No terminal window to keep open. Optional launch at login.
 - **Useful detail.** Input, cached input, output, per-model estimates, and reference prices.
 - **Local storage.** SQLite records; no prompts, answers, credentials, or tool output saved.

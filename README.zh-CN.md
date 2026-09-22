@@ -6,6 +6,10 @@
 
 SuperLight 记录本机 Codex 的 Token 用量，并估算对应的 API 成本。菜单栏标签显示今日金额，点击即可查看今日、本周、本月的汇总与模型单价。
 
+[![SuperLight 菜单栏演示](docs/media/superlight-demo.gif)](docs/media/superlight-demo.mp4)
+
+[观看 7 秒演示视频（MP4）](docs/media/superlight-demo.mp4)
+
 - **安静常驻。** 后台运行，无需保留日志终端，可选登录时启动。
 - **清楚直观。** 输入、缓存、输出、各模型消费及参考单价。
 - **数据本地保存。** 使用 SQLite，不保存提示词、回答、凭据或工具输出。
