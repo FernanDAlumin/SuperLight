@@ -21,6 +21,7 @@ from pathlib import Path
 root, app, python = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]
 shutil.copytree(root / 'superlight', app / 'Contents/Resources/backend/superlight',
                 dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+shutil.copy2(root / 'LICENSE', app / 'Contents/Resources/LICENSE')
 (app / 'Contents/Resources/python-path.txt').write_text(python)
 info = dict(CFBundleName='SuperLight', CFBundleDisplayName='SuperLight',
             CFBundleIdentifier='org.superlight.app', CFBundleExecutable='SuperLight',

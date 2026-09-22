@@ -72,3 +72,7 @@ make app
 ```
 
 Tests cover calendar boundaries and DST, pricing, deduplication, persistence, local browser access, proxy forwarding, and Codex event compatibility. The app build is signed locally; a notarized distribution is not included.
+
+## License
+
+[MIT](LICENSE) © 2026 Lawrenz.

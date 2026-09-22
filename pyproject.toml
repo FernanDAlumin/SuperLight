@@ -7,6 +7,7 @@ name = "superlight"
 version = "0.2.0"
 description = "Local forwarding and model usage observation for personal agents"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.9"
 dependencies = []
 
