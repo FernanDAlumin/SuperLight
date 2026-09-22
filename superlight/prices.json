@@ -1,0 +1,25 @@
+{
+  "currency": "USD",
+  "as_of": "2026-09-22",
+  "basis": "standard_api_text_tokens",
+  "source": "https://developers.openai.com/api/docs/pricing",
+  "models": {
+    "gpt-5.3-codex": {"input": "1.75", "cached_input": "0.175", "output": "14"},
+    "gpt-6-astra": {
+      "input": "10", "cached_input": "1", "output": "50",
+      "long_context": {"above_input_tokens": 272000, "input": "20", "cached_input": "2", "output": "75"}
+    },
+    "gpt-5.6-sol": {
+      "input": "4", "cached_input": "0.40", "output": "20",
+      "long_context": {"above_input_tokens": 272000, "input": "8", "cached_input": "0.80", "output": "30"}
+    },
+    "gpt-5.6-terra": {
+      "input": "2", "cached_input": "0.20", "output": "12",
+      "long_context": {"above_input_tokens": 272000, "input": "4", "cached_input": "0.40", "output": "18"}
+    },
+    "gpt-5.6-luna": {
+      "input": "0.20", "cached_input": "0.02", "output": "1.20",
+      "long_context": {"above_input_tokens": 272000, "input": "0.40", "cached_input": "0.04", "output": "1.80"}
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Merge this section into the user-level ~/.codex/config.toml.
+# If [otel] already exists, edit that section instead of adding a duplicate.
+# This routes usage telemetry to SuperLight; it does not change model networking.
+[otel]
+log_user_prompt = false
+exporter = { otlp-http = { endpoint = "http://127.0.0.1:12618/v1/logs", protocol = "json" } }

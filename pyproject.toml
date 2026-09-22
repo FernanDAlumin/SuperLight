@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "superlight"
+version = "0.2.0"
+description = "Local forwarding and model usage observation for personal agents"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+superlight = "superlight.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["superlight*"]
+
+[tool.setuptools.package-data]
+superlight = ["prices.json", "web/*.html", "web/*.css", "web/*.js"]
