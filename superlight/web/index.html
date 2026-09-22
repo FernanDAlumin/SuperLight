@@ -16,14 +16,10 @@
       </div>
     </header>
     <main>
-      <div class="intro">
-        <div><div class="eyebrow" data-i18n="eyebrow">A LITTLE CLARITY</div><h1 data-i18n="title">Usage, at a glance.</h1><p class="subtitle" data-i18n="subtitle">Your tokens. Your models. A clearer picture.</p></div>
-        <button class="secondary" id="setup"><span aria-hidden="true">＋</span> <span data-i18n="connect">Connect Codex</span></button>
-      </div>
       <nav class="tabs" aria-label="Views">
         <button class="tab active" id="overview-tab" data-view="overview" aria-pressed="true" data-i18n="overview">Overview</button>
         <button class="tab" id="rates-tab" data-view="rates" aria-pressed="false" data-i18n="rates">Model rates</button>
-        <span class="local-note"><span class="tiny-dot"></span><span data-i18n="local">Stays on your Mac</span></span>
+        <button class="secondary" id="setup"><span aria-hidden="true">＋</span> <span data-i18n="connect">Connect Codex</span></button>
       </nav>
       <div id="error" class="notice error" hidden role="alert"></div>
       <section id="overview-view">
@@ -32,8 +28,7 @@
           <button class="period-card" data-period="week" aria-pressed="false"><span class="card-top"><span data-i18n="week">This week</span><span class="period-mark">↗</span></span><span class="amount" id="week-cost">—</span><span class="card-foot" id="week-tokens">—</span></button>
           <button class="period-card" data-period="month" aria-pressed="false"><span class="card-top"><span data-i18n="month">This month</span><span class="period-mark">↗</span></span><span class="amount" id="month-cost">—</span><span class="card-foot" id="month-tokens">—</span></button>
         </div>
-        <p class="estimate-note"><span class="estimate-dot"></span><span data-i18n="estimate">Estimated API value in USD. Not your subscription bill.</span></p>
-        <div id="coverage" class="notice" hidden></div>
+        <p class="estimate-note"><span class="estimate-dot"></span><span data-i18n="estimate">Estimated cost · USD</span></p>
         <section class="panel chart-panel">
           <div class="panel-heading"><div><h2 data-i18n="activity">Spending activity</h2><p class="muted" id="chart-range">—</p></div><span class="chart-legend"><i></i><span data-i18n="estimated">Estimated cost</span></span></div>
           <div class="chart-wrap"><div class="chart-guides"><span id="chart-max">—</span><span>$0</span></div><div class="chart" id="chart" aria-label="Estimated spending by time"></div></div>
@@ -42,7 +37,7 @@
         <section class="panel models-panel">
           <div class="panel-heading"><div><h2 data-i18n="byModel">By model</h2><p class="muted" data-i18n="modelHint">A breakdown of the selected period.</p></div><button class="text-button" id="export" data-i18n="export">Export ↗</button></div>
           <div class="table-scroll"><table class="usage-table"><thead><tr><th data-i18n="model">Model</th><th data-i18n="input">Input</th><th data-i18n="cached">Cached</th><th data-i18n="output">Output</th><th data-i18n="cost">Est. cost</th></tr></thead><tbody id="model-rows"></tbody></table></div>
-          <div class="empty" id="empty" hidden><span class="empty-icon" aria-hidden="true">ϟ</span><h3 data-i18n="emptyTitle">Ready when you are.</h3><p id="empty-description" data-i18n="emptyHint">Connect Codex and finish a response to see your first record.</p><button class="secondary" id="empty-setup" data-i18n="connect">Connect Codex</button></div>
+          <div class="empty" id="empty" hidden><span class="empty-icon" aria-hidden="true">ϟ</span><h3 data-i18n="emptyTitle">No usage yet</h3><p id="empty-description" data-i18n="emptyHint">Connect Codex and finish a response to see your first record.</p><button class="secondary" id="empty-setup" data-i18n="connect">Connect Codex</button></div>
           <div class="table-foot"><span data-i18n="cacheNote">Cached tokens are part of input, not extra tokens.</span><span id="response-count"></span></div>
         </section>
       </section>
@@ -52,12 +47,12 @@
           <div class="table-scroll"><table class="rates-table"><thead><tr><th data-i18n="model">Model</th><th data-i18n="input">Input</th><th data-i18n="cached">Cached</th><th data-i18n="output">Output</th></tr></thead><tbody id="rate-rows"></tbody></table></div>
           <p class="rates-note" id="rates-date"></p>
         </section>
-        <div class="pricing-explanation"><h3 data-i18n="howCost">A simple, transparent estimate.</h3><p data-i18n="formula">Uncached input × input rate + cached input × cache rate + output × output rate.</p><p class="muted" data-i18n="exclusions">Excludes tools, Fast mode, regional uplifts and cache-write premiums. Unknown prices stay unknown.</p></div>
+        <div class="pricing-explanation"><h3 data-i18n="howCost">Cost calculation</h3><p data-i18n="formula">Uncached input × input rate + cached input × cache rate + output × output rate.</p><p class="muted" data-i18n="exclusions">Excludes tools, Fast mode, regional uplifts and cache-write premiums. Unknown prices stay unknown.</p></div>
       </section>
       <footer><span id="updated" data-i18n="waiting">Waiting for the collector…</span><div><button id="refresh" class="text-button" data-i18n="refresh">Refresh</button><button id="open-dashboard" class="text-button compact-only" data-i18n="openDashboard">Open dashboard ↗</button></div></footer>
     </main>
   </div>
-  <dialog id="setup-dialog"><div class="dialog-header"><span class="brand-icon">ϟ</span><button class="icon-button" id="close-dialog" aria-label="Close">×</button></div><div class="eyebrow" data-i18n="oneTime">ONE-TIME SETUP</div><h2 data-i18n="setupTitle">Bring your usage into the light.</h2><p data-i18n="setupHint">Add this section to your user config at ~/.codex/config.toml. Merge an existing [otel] section instead of adding it twice.</p><pre><code id="config-snippet"></code></pre><button class="primary" id="copy-config" data-i18n="copyConfig">Copy configuration</button><p class="muted" data-i18n="setupAfter">Restart Codex, then complete a local task. Your existing login and model connection stay the same.</p><p class="dialog-foot" data-i18n="setupScope">Local Codex tasks only. Remote tasks need a collector on their execution host.</p></dialog>
+  <dialog id="setup-dialog"><div class="dialog-header"><span class="brand-icon">ϟ</span><button class="icon-button" id="close-dialog" aria-label="Close">×</button></div><div class="eyebrow" data-i18n="oneTime">CODEX SETUP</div><h2 data-i18n="setupTitle">Connect Codex</h2><p data-i18n="setupHint">Add this section to your user config at ~/.codex/config.toml. Merge an existing [otel] section instead of adding it twice.</p><pre><code id="config-snippet"></code></pre><button class="primary" id="copy-config" data-i18n="copyConfig">Copy configuration</button><p class="muted" data-i18n="setupAfter">Restart Codex, then complete a local task. Your existing login and model connection stay the same.</p><p class="dialog-foot" data-i18n="setupScope">Local Codex tasks only. Remote tasks need a collector on their execution host.</p></dialog>
   <div class="toast" id="toast" hidden role="status"></div>
 </body>
 </html>
